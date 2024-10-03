@@ -1,0 +1,150 @@
+.portfolio {
+  padding: dpx(145) 0 dpx(168);
+  position: relative;
+
+  &__list {
+    margin: dpx(70) 0 dpx(50);
+  }
+
+  &__item {
+    padding: dpx(24);
+    border-radius: dpx(14);
+    background: rgb(30, 30, 32);
+
+    &:nth-child(3n+2) {
+      margin-top: dpx(58);
+    }
+
+    &:nth-child(3n+3) {
+      margin-top: dpx(116);
+    }
+
+    img {
+      width: 100%;
+      border-radius: dpx(12);
+    }
+  }
+
+  &__decorative-image {
+    position: absolute;
+
+    &--1 {
+      width: dpx(62);
+      top: 20%;
+      right: 5%;
+      transform: rotate(-27.37deg);
+    }
+
+    &--2 {
+      width: dpx(95);
+      bottom: 14%;
+      left: -5%;
+    }
+  }
+
+  &__glake {
+    top: -2%;
+    right: -28%;
+    height: dpx(652);
+    width: dpx(599);
+    transform: rotate(-125.63deg);
+  }
+
+  .swiper-pagination {
+    position: static;
+  }
+
+  .swiper-pagination-bullet {
+    width: dpx(8);
+    height: dpx(8);
+    background: rgb(18, 18, 19);
+    opacity: 1;
+    transition: $transition;
+  }
+
+  .swiper-pagination-bullet-active {
+    border-radius: dpx(10);
+    width: dpx(16);
+    background: $color-accent;
+  }
+
+  .nav-buttons {
+    display: none;
+  }
+}
+
+@media screen and (max-width: $tablet) {
+  .portfolio {
+    padding: mpx(160) 0 mpx(140);
+
+
+    &__list {
+      margin: mpx(50) 0;
+    }
+
+    &__item {
+      padding: mpx(24);
+      border-radius: mpx(14);
+      margin-top: 0 !important;
+
+      img {
+        border-radius: mpx(12);
+      }
+    }
+
+    &__decorative-image {
+      position: absolute;
+
+      &--1 {
+        width: mpx(39);
+        top: 27%;
+        right: 5%;
+      }
+
+      &--2 {
+        width: mpx(61);
+        bottom: 10%;
+        left: 2%;
+      }
+    }
+
+    &__glake {
+      display: none;
+    }
+
+    .swiper {
+      width: 110%;
+      transform: translateX(-50%);
+      left: 50%;
+    }
+
+    .nav-buttons {
+      @include flex-center-all;
+      gap: mpx(12);
+    }
+
+    .nav-btn {
+      height: mpx(38);
+      width: mpx(38);
+      border-radius: 50%;
+      background: $color-accent;
+      @include flex-center-all;
+      transition: $transition;
+
+      &.swiper-button-disabled {
+        background: rgba(255, 255, 255, 0.2);
+      }
+
+      img {
+        width: mpx(8);
+        margin-left: 3%;
+      }
+    }
+
+    .btn-prev {
+      img {
+        transform: rotate(180deg);
+      }
+    }
+  }
+}

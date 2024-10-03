@@ -1,0 +1,57 @@
+.header {
+  &__content {
+    padding: dpx(42) 0;
+    @include flex-center;
+  }
+
+  &__nav {
+    @include flex-center;
+    gap: dpx(40);
+    margin: 0 dpx(230) 0 dpx(280);
+  }
+
+  &__link {
+    font-size: dpx(18);
+    line-height: dpx(25);
+    color: $color-light-grey;
+    transition: $transition;
+
+    &--active,
+    &:hover {
+      color: $color-accent;
+    }
+  }
+
+  &__btn {
+    width: dpx(157);
+    letter-spacing: -0.5px;
+  }
+}
+
+.burger-menu {
+  display: none;
+}
+
+@media screen and (max-width: $tablet) {
+  .burger-menu {
+    @include flex-center-all;
+
+    img {
+      width: dpx(24);
+      height: dpx(24);
+      object-fit: contain;
+    }
+  }
+
+  .header {
+
+    &__content {
+      padding: dpx(40) 0;
+    }
+
+    &__nav,
+    &__btn {
+      display: none;
+    }
+  }
+}

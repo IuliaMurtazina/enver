@@ -1,0 +1,210 @@
+// VARIABLES
+$color-accent: #5454D4;
+$color-light-grey: rgba(255, 255, 255, 0.7);
+$desktop-width: 1440; // Ширина макета для десктопа
+$mobile-width: 375; // Ширина макета для мобильных устройств
+$transition: all .4s ease-in-out;
+$transition-long: all 1s ease-in-out;
+
+
+// BREAKPOINTS
+$desk-medium: 1536px;
+$desk-small-2: 1280px;
+$desk-small: 1024px;
+$tablet: 768px;
+$phone-big: 480px;
+
+
+// MIXINS
+
+@mixin flex-vert {
+  display: flex;
+  flex-direction: column;
+}
+
+@mixin flex-center {
+  display: flex;
+  align-items: center;
+}
+
+@mixin flex-center-all {
+  @include flex-center;
+  justify-content: center;
+}
+
+@mixin flex-vert-center {
+  @include flex-vert;
+  align-items: center;
+}
+
+// FUNCTIONS
+
+// Функция для перевода пикселей в vw для десктопа
+@function dpx($px) {
+  @return ($px / $desktop-width) * 100vw;
+}
+
+// Функция для перевода пикселей в vw для мобильных устройств
+@function mpx($px) {
+  @return ($px / $mobile-width) * 100vw;
+}
+
+// ROOT
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Nunito Sans;
+  font-weight: 400;
+  color: #fff;
+}
+
+html,
+body {
+  overflow-x: hidden;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+body {
+  background: rgb(25, 25, 27);
+
+  &::-webkit-scrollbar {
+    width: dpx(15);
+  }
+
+  &::-webkit-scrollbar-track {
+    background: transparent;
+  }
+
+  &::-webkit-scrollbar-thumb {
+    border-radius: dpx(50);
+    border: dpx(3) solid transparent;
+    background-clip: padding-box;
+    background-color: $color-accent;
+  }
+}
+
+a {
+  outline: none;
+  text-decoration: none;
+}
+
+button {
+  border: none;
+  outline: none;
+  background: none;
+}
+
+ul {
+  list-style: none;
+}
+
+h1,
+h2 {
+  font-family: Graphik;
+  font-weight: 700;
+}
+
+h1 {
+  font-size: dpx(80);
+  line-height: dpx(84);
+}
+
+h2 {
+  font-size: dpx(60);
+  line-height: dpx(70);
+}
+
+
+@media screen and (max-width: $tablet) {
+  h1 {
+    font-size: mpx(42);
+    line-height: 150%;
+  }
+
+  h2 {
+    font-size: mpx(36);
+    line-height: 150%;
+  }
+}
+
+.content-width {
+  max-width: dpx(1200);
+  margin: 0 auto;
+  // overflow: hidden;
+
+  @media screen and (max-width: $phone-big) {
+    max-width: calc(100% - mpx(48));
+  }
+}
+
+.logo {
+  height: dpx(40);
+  width: auto;
+
+  @media screen and (max-width: $tablet) {
+    height: mpx(34);
+  }
+}
+
+.btn {
+  border-radius: dpx(5);
+  cursor: pointer;
+  transition: $transition;
+
+  &--outlined {
+    border: 1px solid #fff;
+
+    &:hover {
+      background-color: #fff;
+      color: #000;
+    }
+  }
+
+  &--filled {
+    background-color: $color-accent;
+
+    &:hover {
+      opacity: .7;
+      scale: 1.1;
+    }
+  }
+
+  &--small {
+    font-size: dpx(16);
+    padding: dpx(10) 0;
+  }
+
+  &--medium {
+    font-size: dpx(20);
+    padding: dpx(14) 0;
+  }
+
+  @media screen and (max-width: $tablet) {
+    border-radius: mpx(4);
+
+    &--medium {
+      font-size: mpx(16);
+      padding: mpx(11) 0;
+    }
+  }
+}
+
+.glake {
+  filter: blur(dpx(200));
+  background: linear-gradient(180.00deg, rgba(84, 84, 212, 0.27), rgba(84, 84, 212, 0.11) 100%);
+  position: absolute;
+  border-radius: dpx(233);
+}
+
+@import "header.scss";
+@import "hero.scss";
+@import "choice.scss";
+@import "service.scss";
+@import "portfolio.scss";
+@import "contact.scss";
+@import "footer.scss";

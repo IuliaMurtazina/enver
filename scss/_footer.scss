@@ -1,0 +1,60 @@
+.footer {
+  &__content {
+    padding: dpx(50) 0 dpx(100);
+    @include flex-center;
+  }
+
+  &__nav {
+    @include flex-center;
+    gap: dpx(40);
+    margin: 0 dpx(142) 0 dpx(252);
+  }
+
+  &__link {
+    font-size: dpx(18);
+    line-height: dpx(25);
+    color: $color-light-grey;
+    transition: $transition;
+
+    &:hover {
+      color: $color-accent;
+    }
+  }
+
+  &__copy {
+    color: $color-light-grey;
+    font-size: dpx(16);
+    font-weight: 400;
+    line-height: dpx(38);
+    letter-spacing: -0.5px;
+  }
+}
+
+
+@media screen and (max-width: $tablet) {
+  .footer {
+    &__content {
+      padding: mpx(144) 0 mpx(50);
+      flex-direction: column;
+      gap: mpx(40);
+    }
+
+    &__nav {
+      flex-direction: column;
+      gap: mpx(40);
+      margin: 0;
+    }
+
+    &__link {
+      font-size: mpx(18);
+      line-height: mpx(28);
+      font-weight: 700;
+    }
+
+    &__copy {
+      color: #fff;
+      font-size: mpx(18);
+      line-height: mpx(28);
+    }
+  }
+}

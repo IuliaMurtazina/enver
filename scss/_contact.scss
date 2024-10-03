@@ -1,0 +1,70 @@
+.contact {
+  background: rgba(30, 30, 32, 0.5);
+
+  &__content {
+    padding: dpx(187) 0;
+    @include flex-center;
+    justify-content: space-between;
+    position: relative;
+  }
+
+  h2 {
+    max-width: dpx(826);
+  }
+
+  &__btn {
+    width: dpx(201);
+  }
+
+  &__decorative-image {
+    position: absolute;
+
+    &--1 {
+      width: dpx(28);
+      top: 15%;
+      right: 1%;
+    }
+
+    &--2 {
+      width: dpx(51);
+      bottom: 14%;
+      left: 3%;
+    }
+  }
+}
+
+
+@media screen and (max-width: $tablet) {
+  .contact {
+    &__content {
+      padding: mpx(80) 0;
+      flex-direction: column;
+      align-items: flex-start;
+      gap: mpx(50);
+    }
+
+    h2 {
+      max-width: 100%;
+    }
+
+    &__btn {
+      width: mpx(166);
+    }
+
+    &__decorative-image {
+      position: absolute;
+
+      &--1 {
+        width: mpx(18);
+        top: 5%;
+        right: 2%;
+      }
+
+      &--2 {
+        width: mpx(39);
+        bottom: 4%;
+        left: -5%;
+      }
+    }
+  }
+}

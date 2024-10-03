@@ -1,0 +1,93 @@
+.choice {
+  padding: dpx(89) 0;
+  @include flex-vert;
+  gap: dpx(50);
+
+  &__heading {
+    display: flex;
+    justify-content: space-between;
+
+    p {
+      font-size: dpx(21);
+      line-height: dpx(39);
+      letter-spacing: -0.66px;
+      max-width: dpx(588);
+      color: $color-light-grey;
+    }
+  }
+
+  &__video {
+    position: relative;
+    z-index: 2;
+    transform: translateY(dpx(300));
+    opacity: 0;
+    transition: $transition-long;
+
+    &.visible {
+      transform: translateY(0);
+      opacity: 1;
+    }
+  }
+
+  &__poster {
+    width: 100%;
+  }
+
+  &__play-btn {
+    @include flex-center-all;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: dpx(124);
+    height: dpx(124);
+    border-radius: 50%;
+    background-color: $color-accent;
+    transition: $transition;
+    cursor: pointer;
+
+    &:hover {
+      transform: translate(-50%, -50%) scale(1.1);
+    }
+
+    img {
+      width: dpx(20);
+      height: dpx(22);
+      object-fit: contain;
+      margin-left: 5%;
+    }
+  }
+}
+
+@media screen and (max-width: $tablet) {
+  .choice {
+    padding: mpx(112) 0;
+    gap: mpx(50);
+
+    &__heading {
+      flex-direction: column;
+      gap: mpx(30);
+
+      p {
+        font-size: mpx(16);
+        line-height: 150%;
+        letter-spacing: normal;
+        max-width: 100%;
+      }
+    }
+
+    &__video {
+      transform: translateY(mpx(200));
+    }
+
+    &__play-btn {
+      width: mpx(40);
+      height: mpx(40);
+
+      img {
+        width: mpx(12);
+        height: mpx(12);
+      }
+    }
+  }
+}

@@ -1,0 +1,150 @@
+.service {
+  padding: dpx(61) 0;
+  @include flex-vert-center;
+  gap: dpx(98);
+  position: relative;
+
+  h2 {
+    max-width: dpx(695);
+    text-align: center;
+  }
+
+  &__list {
+    @include flex-center;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    row-gap: dpx(121);
+  }
+
+  &__item {
+    @include flex-vert-center;
+    text-align: center;
+    gap: dpx(20);
+    width: dpx(305);
+    transform: scale(.5);
+    opacity: 0;
+    transition: $transition-long;
+
+    &.visible {
+      transform: scale(1);
+      opacity: 1;
+    }
+  }
+
+  &__icon {
+    width: dpx(69);
+    height: dpx(69);
+  }
+
+  &__title {
+    font-size: dpx(28);
+    line-height: dpx(38);
+    font-weight: 600;
+  }
+
+  &__description {
+    color: $color-light-grey;
+    font-size: dpx(20);
+    line-height: dpx(28);
+    letter-spacing: -0.5px;
+  }
+
+  &__decorative-image {
+    position: absolute;
+
+    &--1 {
+      width: dpx(104);
+      top: 3%;
+      left: 5%;
+    }
+
+    &--2 {
+      width: dpx(28);
+      top: 16%;
+      right: 3%;
+      transform: rotate(-31.42deg);
+    }
+
+    &--3 {
+      width: dpx(28);
+      bottom: -4%;
+      left: 0;
+      transform: rotate(25.34deg);
+    }
+  }
+
+  &__glake {
+    top: -25%;
+    left: -30%;
+    height: dpx(508);
+    width: dpx(467);
+    transform: rotate(-54.37deg);
+  }
+}
+
+@media screen and (max-width: $tablet) {
+  .service {
+    padding: mpx(27) 0;
+    gap: mpx(98);
+
+    h2 {
+      align-self: flex-start;
+      text-align: left;
+      max-width: mpx(300);
+    }
+
+    &__list {
+      flex-direction: column;
+      row-gap: mpx(120);
+    }
+
+    &__item {
+      gap: mpx(20);
+      width: mpx(255);
+    }
+
+    &__icon {
+      width: mpx(69);
+      height: mpx(69);
+    }
+
+    &__title {
+      font-size: mpx(24);
+      line-height: mpx(33);
+      font-weight: 600;
+    }
+
+    &__description {
+      font-size: mpx(16);
+      line-height: mpx(28);
+      letter-spacing: 0;
+    }
+
+    &__decorative-image {
+
+      &--1 {
+        width: mpx(65);
+        top: -2%;
+        left: -2%;
+      }
+
+      &--2 {
+        width: mpx(18);
+        top: 6%;
+        right: -3%;
+        transform: rotate(0);
+      }
+
+      &--3 {
+        width: mpx(18);
+        bottom: -3%;
+        left: 0;
+        transform: rotate(0);
+      }
+    }
+
+    &__glake {
+      display: none;
+    }
+  }
+}

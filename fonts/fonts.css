@@ -1,0 +1,13 @@
+@import url("https://fonts.googleapis.com/css2?family=Nunito+Sans:ital,opsz,wght@0,6..12,200..1000;1,6..12,200..1000&display=swap");
+
+@font-face {
+  font-family: "Graphik";
+  src: url("./Graphik-Bold.eot");
+  src: local("Graphik Bold"), local("Graphik-Bold"),
+    url("./Graphik-Bold.eot?#iefix") format("embedded-opentype"),
+    url("./Graphik-Bold.woff2") format("woff2"),
+    url("./Graphik-Bold.woff") format("woff"),
+    url("./Graphik-Bold.ttf") format("truetype");
+  font-weight: bold;
+  font-style: normal;
+}
